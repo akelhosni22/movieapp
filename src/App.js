@@ -1,12 +1,16 @@
+import './App.css'
 import React,{useState} from 'react'
 import Movielist from './components/Movielist/Movielist'
 import Search from './components/Search/Search'
 import Add from './components/Movielist/Add'
+import Rating from './components/Movielist/Rating'
+import StarRatings from 'react-star-ratings'
+
 const App = () => {
 	const movies=[
 		{
 			title:"Ferry", 
-			description:"A ruthless Ferry Bouman is sent to his native region of Brabant by his boss Brink to avenge an attack on their gang. When he meets the lovely Danielle and old family feuds resurface, Brabant starts to pierce his steel armour.",
+			description:"A ruthless Ferry Bouman is sent to his native region of Brabant by his boss Brink to avenge an attack on their gang. When he meets the lovely Danielle and old family feuds resurface, Brabant starts to pierce his steel armour.      A ruthless Ferry Bouman is sent to his native region of Brabant by his boss Brink to avenge an attack on their gang. When he meets the lovely Danielle and old family feuds resurface, Brabant starts to pierce his steel armour.A ruthless Ferry Bouman is sent to his native region of Brabant by his boss Brink to avenge an attack on their gang. When he meets the lovely Danielle and old family feuds resurface, Brabant starts to pierce his steel armour.",
 			posterurl:"https://m.media-amazon.com/images/M/MV5BZThhNWM2Y2ItMDRkOC00MWEyLTg5YmItMThkMzRjYjA3Mzk4XkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_SY500_.jpg.jpg",
 			rating:"4",
 		},
@@ -32,19 +36,38 @@ const App = () => {
 		rating:	"1",
 		},
 		
+		
 	];
 	const [search,setSearch] = useState("")
     const handleSearch=(x)=>{setSearch(x)}
 	const [newlist, setNewlist] = useState(movies)
 	const handlemovie=(y)=>{setNewlist([...movies,y])}
+	const [ratingSearch, setRatingSearch] = useState(0)
+	const changeRating = (x) => {
+		setRatingSearch(x)
+	} 
+
+	
 
 
 	return (
 		<div className="App">
+			<StarRatings
+            rating={5}
+            starRatedColor="gold"
+            changeRating={changeRating}
+            numberOfStars={5}
+            name='rating'
+        />
+		
        <Search handleSearch={handleSearch}/>
-       <Movielist movies={newlist} search={search} />
+	   <Rating changeRating={ changeRating}/>
+       <Movielist movies={movies} newlist={newlist} search={search} ratingSearch={ratingSearch} />
 	   <Add handlemovie={handlemovie}/>
+	  
 		</div>
+	
+		
 	)
 }
 
