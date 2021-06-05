@@ -2,3 +2,56 @@
     background-image: url(https://th.bing.com/th/id/R570568570b68662da0cb4d137e39a1c9?rik=iDLb7W3EE05TDA&riu=http%3a%2f%2fi.ytimg.com%2fvi%2fiEDzovRzhco%2fmaxresdefault.jpg&ehk=8KUtZsPQ0X6VYQdXzIQlXkByTv8l2%2bxrRii3MAxYySk%3d&risl=&pid=ImgRaw);
     resize: none;
 }
+.movie{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 60px;
+    
+}
+.form-control{
+    width: 250px;
+    margin-left: 0px;
+    margin-top: 70px;
+}
+.inputtt{
+    width: 300px;
+
+}
+
+
+.star{
+    float:right;
+    margin-right: 30px;}
+
+
+.position{
+    
+    width: 10px;
+}
+.freemovies{
+    text-align: center;
+    color: blanchedalmond;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 60px;
+    font-style: italic;
+    text-decoration-line: underline;
+}
+
+
+.moviecard{
+    text-align: center;
+}
+.rate{
+    justify-content: center;
+}
+.reactstars{
+    text-align: center;
+    justify-content: center;
+    margin-left: 125px;
+}
+.video{
+    justify-content: center;
+    margin-left: 400px;
+}
+.posteurl{ size: 300;}
